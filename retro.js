@@ -46,8 +46,8 @@
     case 'mail.google.com':
       applyStyle(`
         * {
-          background-color: #484059 !important;
-          color: #ccc !important;
+          background-color: #302745 !important;
+          color: #bac !important;
         }
       `)
       break
