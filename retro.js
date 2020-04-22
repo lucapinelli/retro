@@ -53,8 +53,27 @@
       break
     case 'web.whatsapp.com':
       applyStyle(`
-        body { filter: invert(82%); }
-        img { filter: invert(82%); }
+        * {
+          background-color: transparent !important;
+          color: inherit !important;
+        }
+        header {
+          background-color: #151515 !important;
+        }
+        div.app {
+          background-color: #222 !important;
+          background-image: none !important;
+          color: #aaa !important;
+        }
+        div.focusable-list-item {
+          background-color: #333 !important;
+        }
+        div.app-wrapper-web {
+          background-color: #322039 !important;
+        }
+        div::after {
+          background-color: #43314a !important;
+        }
       `)
       break
     case 'translate.google.com':
