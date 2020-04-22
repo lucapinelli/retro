@@ -19,10 +19,20 @@
   // }
 
   // document.location.host === 'translate.google.com'
-  switch (document.location.host) {
+  switch (document.location.hostname) {
+    case 'docs.google.com':
+    case 'drive.google.com':
     case 'duckduckgo.com':
     case 'gitlab.mi-c3.com':
+    case 'localhost':
+    case 'meet.google.com':
     case 'stackoverflow.com':
+      if (document.location.pathname === '/graphiql') {
+        applyStyle(`
+          body { filter: invert(82%); }
+          img { filter: invert(82%); }
+        `)
+      }
       break
     case 'www.youtube.com':
     case 'chat.affectli.com':
@@ -35,9 +45,12 @@
       break
     case 'mail.google.com':
       applyStyle(`
-        body { filter: grayscale(70%) invert(90%); }
-        img { filter: invert(90%); }
+        * {
+          background-color: #484059 !important;
+          color: #ccc !important;
+        }
       `)
+      break
     case 'web.whatsapp.com':
       applyStyle(`
         body { filter: invert(82%); }
@@ -50,7 +63,6 @@
         div.frame { background-color: white; }
       `)
       break
-
     default:
 
       applyStyle(`
