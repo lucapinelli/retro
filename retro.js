@@ -23,10 +23,12 @@
     case 'docs.google.com':
     case 'drive.google.com':
     case 'duckduckgo.com':
-    case 'gitlab.mi-c3.com':
+    case 'geojson.io':
     case 'localhost':
     case 'meet.google.com':
+    case 'meet.jit.si':
     case 'stackoverflow.com':
+    case 'vpn.mi-c3.com':
       if (document.location.pathname === '/graphiql') {
         applyStyle(`
           body { filter: invert(82%); }
@@ -48,6 +50,68 @@
         * {
           background-color: #302745 !important;
           color: #bac !important;
+        }
+      `)
+      break
+    case 'github.com':
+      applyStyle(`
+        * {
+          background-color: transparent !important;
+          color: inherit !important;
+        }
+        body {
+          background-color: #333 !important;
+          color: #bbb !important;
+        }
+        div.pagehead {
+          background-color: #222 !important;
+        }
+        .btn {
+          background-image: linear-gradient(-180deg, #622,#311) !important;
+        }
+        .btn-primary {
+          background-image: linear-gradient(-180deg, #d33,#311) !important;
+        }
+        .link-gray, .text-gray-dark {
+          color: #b99 !important;
+        }
+        nav, span.bg-gray-light {
+          background-color: #311 !important;
+        }
+      `)
+      break
+    case 'gitlab.mi-c3.com':
+      applyStyle(`
+        * {
+          background-color: inherit !important;
+          color: inherit !important;
+        }
+        html {
+          margin-top: -42px !important;
+          overflow: overlay !important;
+        }
+        body {
+          background-color: #333 !important;
+          color: #bbb !important;
+          filter: grayscale(0.3)
+        }
+        div.item-body {
+          background-color: #222 !important;
+          color: #ccc !important;
+        }
+        header {
+          background-color: #111 !important;
+          color: #ddd !important;
+        }
+        div.nav-sidebar {
+          max-height: calc(100vh - 40px) !important;
+        }
+        .gl-label {
+          background-color: #111 !important;
+          color: #ddd !important;
+        }
+        a {
+          color: #dbb !important;
         }
       `)
       break
