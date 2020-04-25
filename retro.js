@@ -55,6 +55,29 @@
       break
     case 'github.com':
       applyStyle(`
+        /* user home */
+        .js-header-wrapper {
+          background-color: #222 !important;
+          color: #bbb !important;
+        }
+        .bg-gray, .application-main  {
+          background-color: #333 !important;
+          color: #bbb !important;
+        }
+        .Box, .bg-white  {
+          background-color: #2a2a2a !important;
+          color: #bbb !important;
+        }
+        .text-gray {
+          color: #ddd !important;
+        }
+        a, .link-gray, .link-gray-dark {
+          color: #d66 !important;
+        }
+        input {
+          background-color: #444 !important;
+        }
+        /* when you open a repo */
         * {
           background-color: transparent !important;
           color: inherit !important;
