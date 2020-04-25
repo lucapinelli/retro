@@ -3,6 +3,14 @@
 
   const id = '76f6449c-2ac6-46b5-8490-f6ad4c2f3341'
 
+  /*
+  const id = '76f6449c-2ac6-46b5-8490-f6ad4c2f3341'
+  const removeStyle = () => {
+    const node = document.getElementById(id)
+    node && document.body.removeChild(node)
+  }
+  */
+
   const applyStyle = (css) => {
     let node = document.getElementById(id)
     if (!node) {
@@ -13,12 +21,6 @@
     node.innerHTML = css
   }
 
-  // const removeStyle = () => {
-  //   const node = document.getElementById(id)
-  //   node && document.body.removeChild(node)
-  // }
-
-  // document.location.host === 'translate.google.com'
   switch (document.location.hostname) {
     case 'docs.google.com':
     case 'drive.google.com':
@@ -33,6 +35,16 @@
         applyStyle(`
           body { filter: invert(82%); }
           img { filter: invert(82%); }
+        `)
+      }
+      break
+    case 'docs.rs':
+      if (!document.location.pathname.match(/^\/[^/]+\/\d\.\d\.\d\/[^/]+\/$/)) {
+        applyStyle(`
+		      * {
+		        background-color: #333 !important;
+		        color: #ccc !important;
+		      }
         `)
       }
       break
@@ -60,11 +72,11 @@
           background-color: #222 !important;
           color: #bbb !important;
         }
-        .bg-gray, .application-main  {
+        .bg-gray, .application-main, .notifications-list-item, .text-normal {
           background-color: #333 !important;
           color: #bbb !important;
         }
-        .Box, .bg-white  {
+        .Box, .Box-body, .bg-white, .Label {
           background-color: #2a2a2a !important;
           color: #bbb !important;
         }
@@ -95,10 +107,15 @@
         .btn-primary {
           background-image: linear-gradient(-180deg, #d33,#311) !important;
         }
-        .link-gray, .text-gray-dark {
+        a,
+        .link-gray,
+        .text-gray-dark,
+        .notifications-list-item .notification-list-item-link,
+        .notifications-list-item.notification-unread .notification-list-item-link
+        {
           color: #b99 !important;
         }
-        nav, span.bg-gray-light {
+        nav, span.bg-gray-light, .dropdown-menu {
           background-color: #311 !important;
         }
       `)
@@ -152,8 +169,9 @@
           background-image: none !important;
           color: #aaa !important;
         }
-        div.focusable-list-item {
+        div.focusable-list-item, ul {
           background-color: #333 !important;
+          color: #aaa !important;
         }
         div.app-wrapper-web {
           background-color: #322039 !important;
